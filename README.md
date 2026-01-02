@@ -139,6 +139,44 @@ The current homepage on ridewire.tech follows this order:
 - **Questions about deployment?** Check `.github/workflows/deploy.yml`
 - **Need to revert a change?** Use GitHub's version history or revert commit
 - **Want to test a change before going live?** Create a branch, test on staging, then merge to `main`
+- 
+## Hostinger Git Auto-Deploy Setup
+
+To enable automatic deployments from this GitHub repository to Hostinger:
+
+### 1. Access Hostinger hPanel
+- Log in to https://hpanel.hostinger.com
+- Navigate to **Websites** and select **ridewire.tech**
+- Click **Manage**
+
+### 2. Configure Git Repository
+- In the left sidebar, find and click **Git**
+- Click **Create a new repository entry**
+- Enter Repository URL: `https://github.com/STEPHENIESGEM/ridewire-site`
+- Set Branch: `main`
+- Install Path: Leave as default (`public_html`)
+
+### 3. Enable Auto-Deployment
+- Click the **Auto-Deployment** button next to your repository
+- A popup will display a **Webhook URL**
+- Copy this URL (you'll need it for the next step)
+
+### 4. Configure GitHub Webhook
+- Go to your GitHub repository: https://github.com/STEPHENIESGEM/ridewire-site
+- Click **Settings** → **Webhooks**
+- Click **Add webhook**
+- Paste the Webhook URL from step 3
+- Set **Content type** to `application/json`
+- Select **Let me select individual events** and check `push`
+- Click **Add webhook**
+
+### 5. Test the Setup
+- Make a test commit to the main branch
+- The webhook will trigger automatically
+- Your Hostinger site will deploy within seconds
+
+Once configured, every `git push` to the `main` branch will automatically deploy to `ridewire.tech`!
+
 
 ---
 
