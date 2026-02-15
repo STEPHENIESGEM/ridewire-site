@@ -64,7 +64,7 @@ function ridewire_add_animated_demo() {
                 
                 <div style="margin-top:40px;">
                     <a href="/pricing" style="display:inline-block; padding:18px 40px; background:#FFB800; color:#0A1128; text-decoration:none; border-radius:5px; font-weight:bold; font-size:20px; transition:all 0.3s;" onmouseover="this.style.background='#FFA500'" onmouseout="this.style.background='#FFB800'">
-                        Start Free Trial (5 Diagnostics Free) →
+                        Start Free Trial
                     </a>
                 </div>
             </div>
