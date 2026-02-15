@@ -50,7 +50,7 @@ ridewire-site/
 ### Demo Video Updates
 
 **Recording New Demo:**
-1. Record 60-90s MP4 using Loom/OBS (P0300 check-engine-light scenario)
+1. Record 60-90s MP4 using Loom/OBS (P0300 misfire check-engine-light scenario)
 2. Save as `ridewire-demo.mp4`
 3. Upload to `/demo/` folder in this repo
 4. If releasing on YouTube:
@@ -139,7 +139,6 @@ The current homepage on ridewire.tech follows this order:
 - **Questions about deployment?** Check `.github/workflows/deploy.yml`
 - **Need to revert a change?** Use GitHub's version history or revert commit
 - **Want to test a change before going live?** Create a branch, test on staging, then merge to `main`
-- 
 ## Hostinger Git Auto-Deploy Setup
 
 To enable automatic deployments from this GitHub repository to Hostinger:
@@ -180,4 +179,4 @@ Once configured, every `git push` to the `main` branch will automatically deploy
 
 ---
 
-**This is the autopilot control panel. Changes here → ridewire.tech updates automatically. 🚀**
+**This is the centralized deployment control panel. Changes here update ridewire.tech automatically.**
