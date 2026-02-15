@@ -38,32 +38,32 @@ function ridewire_add_animated_demo() {
                     
                     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px; margin:30px 0;">
                         <div style="background:#0A1128; padding:20px; border-radius:8px; border:1px solid #00D9FF;">
-                            <div style="color:#00D9FF; font-weight:bold; margin-bottom:10px;">🤖 ChatGPT</div>
+                            <div style="color:#00D9FF; font-weight:bold; margin-bottom:10px;">ChatGPT</div>
                             <div id="ridewire-chatgpt" style="color:#FFFFFF; font-size:12px; line-height:1.5; min-height:60px;" ></div>
                             <div style="margin-top:10px; color:#FFB800; font-size:11px;">Confidence: <span id="ridewire-chatgpt-conf">0%</span></div>
                         </div>
                         
                         <div style="background:#0A1128; padding:20px; border-radius:8px; border:1px solid #00D9FF;">
-                            <div style="color:#00D9FF; font-weight:bold; margin-bottom:10px;">🤖 Claude</div>
+                            <div style="color:#00D9FF; font-weight:bold; margin-bottom:10px;">Claude</div>
                             <div id="ridewire-claude" style="color:#FFFFFF; font-size:12px; line-height:1.5; min-height:60px;"></div>
                             <div style="margin-top:10px; color:#FFB800; font-size:11px;">Confidence: <span id="ridewire-claude-conf">0%</span></div>
                         </div>
                         
                         <div style="background:#0A1128; padding:20px; border-radius:8px; border:1px solid #00D9FF;">
-                            <div style="color:#00D9FF; font-weight:bold; margin-bottom:10px;">🤖 Gemini</div>
+                            <div style="color:#00D9FF; font-weight:bold; margin-bottom:10px;">Gemini</div>
                             <div id="ridewire-gemini" style="color:#FFFFFF; font-size:12px; line-height:1.5; min-height:60px;"></div>
                             <div style="margin-top:10px; color:#FFB800; font-size:11px;">Confidence: <span id="ridewire-gemini-conf">0%</span></div>
                         </div>
                     </div>
                     
                     <div style="background:#28a745; padding:20px; border-radius:8px; margin-top:20px;">
-                        <div style="color:#FFFFFF; font-weight:bold; margin-bottom:10px;">✅ RideWire Consensus Result (94% Confidence)</div>
+                        <div style="color:#FFFFFF; font-weight:bold; margin-bottom:10px;">RideWire Consensus Result (94% Confidence)</div>
                         <div id="ridewire-consensus" style="color:#FFFFFF; font-size:14px; line-height:1.6;"></div>
                     </div>
                 </div>
                 
                 <div style="margin-top:40px;">
-                    <a href="/pricing" style="display:inline-block; padding:18px 40px; background:#FFB800; color:#0A1128; text-decoration:none; border-radius:5px; font-weight:bold; font-size:20px; transition:all 0.3s;" onmouseover="this.style.background='#FFA500'" onmouseout="this.style.background='#FFB800'">
+                    <a href="/pricing" style="display:inline-block; padding:18px 40px; background:#FFB800; color:#0A1128; text-decoration:none; border-radius:6px; font-weight:700; font-size:20px; transition:all 0.3s;" onmouseover="this.style.background='#FFA500'" onmouseout="this.style.background='#FFB800'">
                         Start Free Trial
                     </a>
                 </div>
@@ -73,13 +73,13 @@ function ridewire_add_animated_demo() {
         <script>
         (function() {
             const messages = [
-                { el: 'ridewire-chatgpt', text: 'Random misfire. Check spark plugs first (85% likely). Verify coils if needed.', conf: 85 },
-                { el: 'ridewire-claude', text: 'Ignition system issue. Spark plugs most probable. Test fuel injector spray pattern.', conf: 78 },
-                { el: 'ridewire-gemini', text: 'Run compression test. Pattern suggests fuel injector or coil issue (72% probable).', conf: 72 }
+                { el: 'ridewire-chatgpt', text: 'Intermittent misfire pattern detected. Spark plug diagnosis indicated with 85% probability. Verify ignition coils if unresolved.', conf: 85 },
+                { el: 'ridewire-claude', text: 'Ignition system issue identified. Spark plugs most probable cause. Test fuel injector spray pattern as secondary diagnostic.', conf: 78 },
+                { el: 'ridewire-gemini', text: 'Recommend compression test. Pattern analysis suggests fuel injector or coil malfunction with 72% probability.', conf: 72 }
             ];
             
             const inputText = 'Check engine light P0300 - 2015 Honda Accord';
-            const consensusText = 'Start with spark plug replacement ($80-$150). If issue persists, test ignition coils. Estimated repair time: 30-45 minutes. Next steps: 1) Replace spark plugs, 2) If unresolved, check ignition coil resistance, 3) Consider fuel injector service if symptoms continue.';
+            const consensusText = 'Recommended action: spark plug replacement ($80-$150). Upon persistence, test ignition coil resistance. Estimated repair time: 30-45 minutes. Diagnostic steps: 1) Replace spark plugs, 2) If unresolved, check ignition coil resistance, 3) Consider fuel injector service if symptoms continue.';
             
             let charIndex = 0;
             let messageIndex = 0;
