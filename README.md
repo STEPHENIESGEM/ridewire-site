@@ -14,6 +14,11 @@ ridewire-site/
 │   │   └── deploy.yml          # Auto-deploy workflow on push to main
 │   └── ISSUE_TEMPLATE/
 │       └── homepage-update.md  # Template for homepage changes
+├── app/                        # GitHub Repository Preview Tool (MVP)
+│   ├── index.html              # Main app interface
+│   ├── styles.css              # App styling
+│   ├── app.js                  # GitHub API integration
+│   └── README.md               # App documentation & setup
 ├── demo/
 │   ├── README.md               # Demo update instructions
 │   ├── script.md               # 30-60s demo script
@@ -126,6 +131,18 @@ The current homepage on ridewire.tech follows this order:
 - Pricing changes
 - New sections or pages
 - Major visual identity shifts
+
+## GitHub Repository Preview Tool
+
+The `/app` directory contains a standalone web application that allows users to preview GitHub repositories directly in the browser. This MVP tool:
+
+- **Paste any GitHub repo URL** and explore its contents
+- **Browse Markdown and HTML files** with a clean interface
+- **Render README files** with proper formatting
+- **No build step required** - pure HTML/CSS/JavaScript
+- **Deployable to GitHub Pages** - See `/app/README.md` for setup instructions
+
+To use locally: Open `/app/index.html` in your browser or run `python3 -m http.server` in the `/app` directory.
 
 ## Quick Links
 
