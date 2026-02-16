@@ -37,7 +37,7 @@ This app is configured to work with GitHub Pages. Follow these steps to deploy:
 ### Option 1: Deploy from `/app` folder (Recommended)
 
 1. **Go to your repository on GitHub**
-   - Navigate to: `https://github.com/STEPHENIESGEM/ridewire-sites`
+   - Navigate to: `https://github.com/YOUR_USERNAME/YOUR_REPOSITORY`
 
 2. **Open Settings**
    - Click on the **Settings** tab
@@ -56,7 +56,7 @@ This app is configured to work with GitHub Pages. Follow these steps to deploy:
    - You'll see a green checkmark when ready
 
 5. **Access your site**
-   - Your app will be available at: `https://stepheniesgem.github.io/ridewire-sites/`
+   - Your app will be available at: `https://YOUR_USERNAME.github.io/YOUR_REPOSITORY/`
    - GitHub Pages will automatically serve from the `/app` folder
 
 ### Option 2: Deploy using GitHub Actions (Alternative)

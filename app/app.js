@@ -5,6 +5,14 @@ let currentRepo = {
     defaultBranch: 'main'
 };
 
+// Configure Marked.js for security
+if (typeof marked !== 'undefined') {
+    marked.setOptions({
+        breaks: true,
+        gfm: true
+    });
+}
+
 // Parse GitHub URL
 function parseGitHubUrl(url) {
     try {
@@ -78,9 +86,14 @@ async function fetchFileContent(owner, name, path, branch) {
     }
     const data = await response.json();
     
-    // Decode base64 content
+    // Decode base64 content with UTF-8 support using modern API
     if (data.content) {
-        return atob(data.content);
+        // Remove newlines from base64 string
+        const base64 = data.content.replace(/\n/g, '');
+        // Decode base64 and handle UTF-8 characters properly
+        const binaryString = atob(base64);
+        const bytes = Uint8Array.from(binaryString, c => c.charCodeAt(0));
+        return new TextDecoder().decode(bytes);
     }
     return '';
 }
@@ -145,8 +158,11 @@ async function loadFile(path) {
         const ext = path.toLowerCase();
         
         if (ext.endsWith('.md')) {
-            // Render Markdown
-            contentDiv.innerHTML = marked.parse(content);
+            // Render Markdown with sanitization
+            const html = marked.parse(content);
+            contentDiv.innerHTML = typeof DOMPurify !== 'undefined' 
+                ? DOMPurify.sanitize(html) 
+                : html;
         } else if (ext.endsWith('.html')) {
             // Display HTML as code (not render it)
             contentDiv.innerHTML = `<pre><code>${escapeHtml(content)}</code></pre>`;
