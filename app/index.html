@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repo Preview</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Marked.js for Markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GitHub Repository Preview</h1>
+            <p class="subtitle">Paste a GitHub repo URL to explore its contents</p>
+        </header>
+
+        <div class="input-section">
+            <input 
+                type="text" 
+                id="repoUrl" 
+                placeholder="https://github.com/owner/repository"
+                aria-label="GitHub repository URL"
+            >
+            <button id="loadBtn" onclick="loadRepository()">Load Repository</button>
+        </div>
+
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+        <div id="loadingMessage" class="loading-message" style="display: none;">Loading...</div>
+
+        <div id="repoInfo" class="repo-info" style="display: none;">
+            <h2 id="repoName"></h2>
+            <p id="repoDescription"></p>
+            <a id="githubLink" href="#" target="_blank" rel="noopener noreferrer" class="github-link">
+                Open in GitHub →
+            </a>
+        </div>
+
+        <div class="main-content" style="display: none;" id="mainContent">
+            <div class="sidebar">
+                <h3>Files</h3>
+                <div id="fileTree" class="file-tree"></div>
+            </div>
+            <div class="content-viewer">
+                <div id="fileContent" class="file-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
